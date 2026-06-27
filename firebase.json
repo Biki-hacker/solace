@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "default": "solace-ef4f0"
+  },
+  "auth": {
+    "providers": {
+      "emailPassword": true
+    }
+  }
+}

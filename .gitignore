@@ -1,0 +1,101 @@
+# ─── Dependencies ────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# ─── Environment variables — NEVER commit ────────────
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test.local
+.env.production
+.env.production.local
+*.env
+
+# ─── Build outputs ───────────────────────────────────
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+
+# ─── Deployment artifacts ────────────────────────────
+.vercel/
+.firebase/
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+ui-debug.log
+
+# ─── Firebase credentials — CRITICAL ─────────────────
+*serviceAccount*.json
+*service-account*.json
+*ServiceAccount*.json
+firebase-adminsdk*.json
+firebaseserviceaccountkey.json
+
+# ─── Logs ────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Editor / OS artifacts ───────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Test / Coverage ─────────────────────────────────
+coverage/
+*.lcov
+.nyc_output/
+
+# ─── Cache ───────────────────────────────────────────
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# ─── Large binary / media files (use CDN or Storage) ─
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.psd
+*.ai
+*.fig
+*.sketch
+*.xd
+
+# ─── Misc ────────────────────────────────────────────
+*.local
+.env*.local
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ─── Prompt file — not part of the codebase ──────────
+SOLACE_ANTIGRAVITY_PROMPT.md
