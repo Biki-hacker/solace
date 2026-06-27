@@ -90,6 +90,9 @@ export default function AICompanion() {
 
         await updateChatSession(user.uid, currentSessionId, finalMessages);
       } catch (err) {
+        if (import.meta.env.DEV || true) {
+          console.error('AI Companion Chat Error:', err.response?.data || err.message);
+        }
         const errorMessage = {
           role: 'model',
           content: 'I am having a moment of difficulty connecting. Please try again in a moment.',
