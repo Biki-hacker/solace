@@ -69,9 +69,9 @@ app.use((err, req, res, _next) => {
   res.status(500).json({ success: false, error: 'Internal server error' });
 });
 
-/* Local dev server (Vercel uses the export) */
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 8080;
+/* Start server if run directly (Render, Heroku, Local) and not on Vercel */
+if (require.main === module || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
     console.log(`Solace API running on port ${PORT}`);
   });
