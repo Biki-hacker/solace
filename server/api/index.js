@@ -54,6 +54,7 @@ app.use('/api/users', userRoutes);
 
 /* Health check */
 app.get('/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
+app.get('/', (req, res) => res.json({ status: 'ok', message: 'Solace API is running' }));
 
 /* 404 handler */
 app.use((req, res) => {
