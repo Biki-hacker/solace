@@ -147,7 +147,7 @@ Add all environment variables to each project's Vercel environment settings.
 
 ## Live Demo
 
-[https://solace-app.vercel.app](https://solace-app.vercel.app)
+[https://solace-app.vercel.app](https://solace-yvwr.vercel.app/)
 
 ---
 
