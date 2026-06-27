@@ -26,10 +26,29 @@ app.use(helmet());
 /* Compression */
 app.use(compression());
 
-/* CORS — strictly set to frontend URL */
+/* CORS — dynamically allow localhost, FRONTEND_URL, and Vercel/Render subdomains */
+const allowedOrigins = [
+  'http://localhost:5173',
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, or server-to-server)
+      if (!origin) return callback(null, true);
+      
+      const isAllowed = allowedOrigins.includes(origin) || 
+        origin.endsWith('.vercel.app') || 
+        origin.endsWith('.onrender.com') ||
+        process.env.NODE_ENV !== 'production';
+
+      if (isAllowed) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
